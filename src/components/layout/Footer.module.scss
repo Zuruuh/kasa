@@ -1,0 +1,24 @@
+:root {
+  --footer-height: 10rem;
+}
+
+.footer {
+  height: var(--footer-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #000;
+  padding: 1rem;
+}
+
+.image {
+  width: 12rem;
+  height: 4rem;
+  filter: brightness(1004%);
+}
+
+.text {
+  color: #fff;
+  font-size: 1.2rem;
+}

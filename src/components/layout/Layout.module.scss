@@ -1,0 +1,4 @@
+.page {
+  padding: 0 var(--content-padding);
+  min-height: calc(100vh - var(--footer-height) - var(--navbar-height));
+}

@@ -22,15 +22,12 @@ const Navbar: React.FC = () => {
   ));
 
   return (
-    <>
-      <nav className={styles.nav}>
-        <Link to="/">
-          <img alt="Kasa" src="/assets/logo.svg" />
-        </Link>
-        <ul className={styles.links}>{links}</ul>
-      </nav>
-      <Outlet />
-    </>
+    <nav className={styles.nav}>
+      <Link to="/">
+        <img alt="Kasa" src="/assets/logo.svg" />
+      </Link>
+      <ul className={styles.links}>{links}</ul>
+    </nav>
   );
 };
 

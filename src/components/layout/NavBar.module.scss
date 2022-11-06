@@ -1,5 +1,10 @@
+:root {
+  --navbar-height: 10rem;
+}
+
 .nav {
   display: flex;
+  height: var(--navbar-height);
   justify-content: space-between;
   padding: 2rem var(--content-padding);
   align-items: center;
