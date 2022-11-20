@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 
