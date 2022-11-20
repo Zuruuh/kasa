@@ -1,9 +1,9 @@
 import React from 'react';
 
-const About: React.FC = () => {
+const AboutPage: React.FC = () => {
   return <div></div>;
 };
 
-export default About;
+export default AboutPage;
 
 export const URI = '/about';

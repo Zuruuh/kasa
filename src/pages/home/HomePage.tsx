@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import GridCard from '../components/GridCard';
-import { useFetch } from '../hooks/useFetch';
-import type { Housing } from '../types/housing/Housing';
-import styles from './Home.module.scss';
+import GridCard from '../../components/GridCard';
+import { useFetch } from '../../hooks/useFetch';
+import type { Housing } from '../../types/housing/Housing';
+import styles from './HomePage.module.scss';
 import heroImage from '/assets/home/hero.jpeg';
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   const { data: housings } = useFetch<Housing[]>('/data/housings.json');
   useEffect(() => {
     console.log(housings);
@@ -38,4 +38,4 @@ const Home: React.FC = () => {
 
 export const URI = '/';
 
-export default Home;
+export default HomePage;

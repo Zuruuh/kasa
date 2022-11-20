@@ -1,12 +1,14 @@
 import { RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
-import HomePage, { URI as HomeURI } from './pages/Home';
-import AboutPage, { URI as AboutURI } from './pages/About';
+import HomePage, { URI as HomeURI } from './pages/home/HomePage';
+import AboutPage, { URI as AboutURI } from './pages/about/AboutPage';
 import Layout from './components/layout/Layout';
+import Error404Page from './pages/errors/404/Error404Page';
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
+    errorElement: <Error404Page />,
     children: [
       {
         path: HomeURI,
