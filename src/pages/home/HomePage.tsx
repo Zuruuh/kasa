@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import GridCard from '../../components/GridCard';
+import GridCard from '../../components/Grid/Card/GridCard';
 import { useFetch } from '../../hooks/useFetch';
 import type { Housing } from '../../types/housing/Housing';
 import styles from './HomePage.module.scss';
