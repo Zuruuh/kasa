@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { URI as HomeURI } from '~/pages/home/HomePage';
-import { URI as AboutURI } from '~/pages/about/AboutPage';
+import HomePage from '~/pages/Home/HomePage';
+import AboutPage from '~/pages/About/AboutPage';
 import styles from './NavBar.module.scss';
 
 interface NavLinkData {
@@ -10,8 +10,8 @@ interface NavLinkData {
 }
 
 const NAV_LINKS_DATA: NavLinkData[] = [
-  { label: 'Accueil', link: HomeURI },
-  { label: 'A Propos', link: AboutURI },
+  { label: 'Accueil', link: HomePage.path },
+  { label: 'A Propos', link: AboutPage.path },
 ];
 
 const Navbar: FC = () => {
@@ -30,7 +30,7 @@ const Navbar: FC = () => {
 
   return (
     <nav className={styles.nav}>
-      <Link to="/">
+      <Link to={HomePage.path}>
         <img alt="Kasa" src="/assets/logo.svg" />
       </Link>
       <ul className={styles.links}>{links}</ul>
