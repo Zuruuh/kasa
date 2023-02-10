@@ -1,6 +1,9 @@
-import React from 'react';
-import Accordion from '../../components/Accordion/Accordion';
-import type { AccordionProps } from '../../components/Accordion/Accordion';
+import { type FC } from 'react';
+import Accordion from '~/shared/components/Accordion/Accordion';
+import {
+  ACCORDION_STATES,
+  type AccordionProps,
+} from '~/shared/components/Accordion/Accordion.types';
 import styles from './AboutPage.module.scss';
 
 const ACCORDION_DATA: AccordionProps[] = [
@@ -24,15 +27,20 @@ const ACCORDION_DATA: AccordionProps[] = [
     label: 'Responsabilité',
     content:
       'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.',
+    defaultState: ACCORDION_STATES.OPENED,
   },
 ];
 
-const AboutPage: React.FC = () => {
+const AboutPage: FC = () => {
   return (
-    <div>
-      {ACCORDION_DATA.map(({ label, content }) => (
+    <div className={styles.page}>
+      {ACCORDION_DATA.map(({ label, content, defaultState }) => (
         <div key={label} className={styles.accordionContainer}>
-          <Accordion label={label} content={content} />
+          <Accordion
+            label={label}
+            content={content}
+            defaultState={defaultState}
+          />
         </div>
       ))}
     </div>
