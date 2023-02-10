@@ -1,6 +1,7 @@
+import { type FC } from 'react';
 import styles from './Footer.module.scss';
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
     <footer className={styles.footer}>
       <img className={styles.image} alt="Kasa" src="/assets/logo.svg" />

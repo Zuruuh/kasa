@@ -1,12 +1,20 @@
+import { type FC, memo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { URI as HomeURI } from '~/pages/home/HomePage';
+import { URI as AboutURI } from '~/pages/about/AboutPage';
 import styles from './NavBar.module.scss';
 
-const NAV_LINKS_DATA = [
-  { label: 'Accueil', link: '/' },
-  { label: 'A Propos', link: '/about' },
+interface NavLinkData {
+  label: string;
+  link: string;
+}
+
+const NAV_LINKS_DATA: NavLinkData[] = [
+  { label: 'Accueil', link: HomeURI },
+  { label: 'A Propos', link: AboutURI },
 ];
 
-const Navbar: React.FC = () => {
+const Navbar: FC = () => {
   const links = NAV_LINKS_DATA.map(({ link, label }) => (
     <li key={link}>
       <NavLink
@@ -30,4 +38,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

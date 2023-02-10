@@ -1,5 +1,5 @@
 .page {
   --bottom-page-padding: 2rem;
   padding: 0 var(--content-padding) var(--bottom-page-padding);
-  min-height: calc(100vh - var(--footer-height) - var(--navbar-height));
+  min-height: calc(99.5vh - var(--footer-height) - var(--navbar-height));
 }

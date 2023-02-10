@@ -1,3 +1,4 @@
+import { type FC } from 'react';
 import PropTypes from 'prop-types';
 import styles from './GridCard.module.scss';
 
@@ -6,8 +7,7 @@ export interface GridCardProps {
   image: string;
 }
 
-const GridCard: React.FC<GridCardProps> = ({ label, image }) => {
-  console.log(image);
+const GridCard: FC<GridCardProps> = ({ label, image }) => {
   return (
     <div
       className={styles.card}
