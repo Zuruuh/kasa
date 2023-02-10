@@ -1,14 +1,15 @@
-import { useEffect } from 'react';
-import GridCard from '../../components/Grid/Card/GridCard';
-import { useFetch } from '../../hooks/useFetch';
-import type { Housing } from '../../types/housing/Housing';
+import { useEffect, type FC } from 'react';
+import GridCard from './components/grid_card/GridCard';
+import { useFetch } from '~/shared/hooks/useFetch';
 import styles from './HomePage.module.scss';
 import heroImage from '/assets/home/hero.jpeg';
+import type { Housing } from '~/shared/types/housing/Housing';
 
-const HomePage: React.FC = () => {
+const HomePage: FC = () => {
   const { data: housings } = useFetch<Housing[]>('/data/housings.json');
+
   useEffect(() => {
-    console.log(housings);
+    // console.log(housings);
   }, [housings]);
 
   return (

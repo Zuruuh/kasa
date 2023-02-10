@@ -1,9 +1,6 @@
 import { type FC } from 'react';
 import Accordion from '~/shared/components/Accordion/Accordion';
-import {
-  ACCORDION_STATES,
-  type AccordionProps,
-} from '~/shared/components/Accordion/Accordion.types';
+import { type AccordionProps } from '~/shared/components/Accordion/Accordion.types';
 import styles from './AboutPage.module.scss';
 
 const ACCORDION_DATA: AccordionProps[] = [
@@ -27,7 +24,6 @@ const ACCORDION_DATA: AccordionProps[] = [
     label: 'Responsabilité',
     content:
       'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.',
-    defaultState: ACCORDION_STATES.OPENED,
   },
 ];
 
