@@ -8,7 +8,8 @@
     "coverage": "vitest run --coverage",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint:eslint": "eslint"
+    "lint:eslint": "eslint",
+    "lint:typescript": "tsc"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
@@ -21,8 +22,8 @@
     "@testing-library/dom": "^8.20.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "@tjmora/ts-range-types": "^1.1.0",
     "@types/chai": "^4.3.4",
-    "@types/chai-dom": "^1.11.0",
     "@types/node": "^18.13.0",
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.0.22",
@@ -34,7 +35,6 @@
     "@vitest/ui": "^0.28.4",
     "autoprefixer": "^10.4.13",
     "chai": "^4.3.7",
-    "chai-dom": "^1.11.0",
     "csstype": "^3.1.1",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
