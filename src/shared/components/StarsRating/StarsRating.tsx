@@ -14,15 +14,23 @@ export interface StarsRatingProps {
 
 const StarsRating: FC<StarsRatingProps> = ({ count }) => {
   return (
-    <>
+    <div aria-label={`Note: ${count}/5`}>
       {Array.from({ length: 5 }).map((_, i) =>
         i >= count ? (
-          <Star key={`${count}-${i}`} className={styles.starEmpty} />
+          <Star
+            key={`${count}-${i}`}
+            className={`${styles.starEmpty} empty`}
+            role="img"
+          />
         ) : (
-          <Star key={`${count}-${i}`} className={styles.starFilled} />
+          <Star
+            key={`${count}-${i}`}
+            className={`${styles.starFilled} filled`}
+            role="img"
+          />
         )
       )}
-    </>
+    </div>
   );
 };
 

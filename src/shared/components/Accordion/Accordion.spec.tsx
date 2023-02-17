@@ -1,11 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import { test, describe, expect, beforeEach } from 'vitest';
+import { test, describe, expect, beforeEach, beforeAll } from 'vitest';
 import UserEvent from '@testing-library/user-event';
 import Accordion from './Accordion';
 import { ACCORDION_STATES } from './Accordion.types';
 
 describe('Accordion', async () => {
-  const user = UserEvent.setup();
+  let user!: ReturnType<typeof UserEvent.setup>;
+
+  beforeAll(async () => {
+    user = UserEvent.setup();
+  });
 
   describe('Accordion closed by default', async () => {
     beforeEach(async () => {

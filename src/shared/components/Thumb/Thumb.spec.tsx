@@ -3,9 +3,10 @@ import { describe, test, expect, beforeEach } from 'vitest';
 import Thumb from './Thumb';
 import { BrowserRouter } from 'react-router-dom';
 
+const image =
+  'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg';
+
 describe('Thumb', async () => {
-  const image =
-    'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg';
   describe('Renders correctly', async () => {
     beforeEach(async () => {
       render(<Thumb label="My Label" link="/test" image={image} />, {
