@@ -22,4 +22,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run eslint ✨
-        run: pnpm run lint src
+        run: pnpm run lint:eslint src
+
+      - name: Run typescript ✨
+        run: pnpm run lint:typescript
