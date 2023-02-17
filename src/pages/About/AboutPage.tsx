@@ -3,6 +3,8 @@ import Accordion from '~/shared/components/Accordion/Accordion';
 import { type AccordionProps } from '~/shared/components/Accordion/Accordion.types';
 import styles from './AboutPage.module.scss';
 import { Page } from '~/shared/types/Page';
+import ImageHeader from '~/shared/components/ImageHeader/ImageHeader';
+import image from './assets/kalen-emsley-Bkci_8qcdvQ-unsplash 3.png';
 
 const ACCORDION_DATA: AccordionProps[] = [
   {
@@ -30,17 +32,20 @@ const ACCORDION_DATA: AccordionProps[] = [
 
 const AboutPage: FC = () => {
   return (
-    <div className={styles.page}>
-      {ACCORDION_DATA.map(({ label, content, defaultState }) => (
-        <div key={label} className={styles.accordionContainer}>
-          <Accordion
-            label={label}
-            content={content}
-            defaultState={defaultState}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <ImageHeader image={image} />
+      <div className={styles.page}>
+        {ACCORDION_DATA.map(({ label, content, defaultState }) => (
+          <div key={label} className={styles.accordionContainer}>
+            <Accordion
+              label={label}
+              content={content}
+              defaultState={defaultState}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
