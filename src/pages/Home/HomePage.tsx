@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import Thumb from './components/Thumb/Thumb';
+import Thumb from '~/shared/components/Thumb/Thumb';
 import { useFetch } from '~/shared/hooks/useFetch';
 import styles from './HomePage.module.scss';
 import heroImage from '/assets/home/hero.jpeg';
