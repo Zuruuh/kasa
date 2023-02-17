@@ -1,15 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { test, describe, expect, beforeEach } from 'vitest';
-import userEvent from '@testing-library/user-event';
+import UserEvent from '@testing-library/user-event';
 import Accordion from './Accordion';
 import { ACCORDION_STATES } from './Accordion.types';
 
 describe('Accordion', async () => {
-  let user!: ReturnType<typeof userEvent.setup>;
-
-  beforeEach(async () => {
-    user = userEvent.setup();
-  });
+  const user = UserEvent.setup();
 
   describe('Accordion closed by default', async () => {
     beforeEach(async () => {
@@ -23,10 +19,10 @@ describe('Accordion', async () => {
     });
 
     test('The label is displayed', async () => {
-      const label = screen.queryByText('My Label');
+      const label = screen.queryByText('My Label')!;
 
       expect(label).not.toBeNull();
-      expect(label?.textContent).toBe('My Label');
+      expect(label.textContent).toBe('My Label');
     });
 
     test("I can't see the text when it's closed", async () => {
