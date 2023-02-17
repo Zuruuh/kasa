@@ -2,7 +2,7 @@ name: Launch tests
 on: [push, pull_request]
 
 jobs:
-  lint-sources:
+  tests:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎️
