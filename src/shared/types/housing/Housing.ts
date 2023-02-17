@@ -1,7 +1,8 @@
+import type { StringIntRange } from '@tjmora/ts-range-types';
 import type { Equipment } from './Equipment';
 import type { Host } from './Host';
 import type { Tag } from './Tag';
-import type { URL } from '~/shared/types/shared/URL';
+import type { URL } from '~/shared/types/URL';
 
 export interface Housing {
   id: string;
@@ -10,7 +11,7 @@ export interface Housing {
   pictures: URL[];
   description: string;
   host: Host;
-  rating: string;
+  rating: StringIntRange<0, 5>;
   location: string;
   equipements: Equipment[];
   tags: Tag[];

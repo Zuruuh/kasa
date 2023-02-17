@@ -1,4 +1,4 @@
-import type { URL } from '~/shared/types/shared/URL';
+import type { URL } from '~/shared/types/URL';
 
 export interface Host {
   name: string;

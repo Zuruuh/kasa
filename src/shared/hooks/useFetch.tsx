@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { URL } from '~/shared/types/shared/URL';
+import type { URL } from '~/shared/types/URL';
 
 export interface FetchOutput<T> {
   data: T | null;
