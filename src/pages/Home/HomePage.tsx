@@ -1,36 +1,30 @@
-import { useEffect, type FC } from 'react';
-import GridCard from './components/GridCard/GridCard';
+import { type FC } from 'react';
+import Thumb from './components/Thumb/Thumb';
 import { useFetch } from '~/shared/hooks/useFetch';
 import styles from './HomePage.module.scss';
 import heroImage from '/assets/home/hero.jpeg';
+import HousingPage from '~/pages/Housing';
 import type { Housing } from '~/shared/types/housing/Housing';
 import type { Page } from '~/shared/types/Page';
+import ImageHeader from '~/shared/components/ImageHeader/ImageHeader';
 
 const HomePage: FC = () => {
   const { data: housings } = useFetch<Housing[]>('/data/housings.json');
 
-  useEffect(() => {
-    // console.log(housings);
-  }, []);
-
   return (
     <>
-      <section>
-        <div className={styles.hero}>
-          <img
-            className={styles.heroImage}
-            src={heroImage}
-            alt="Chez vous, partout et ailleurs"
-          />
-          <h2 className={styles.heroHeading}>Chez vous, partout et ailleurs</h2>
-        </div>
-      </section>
+      <ImageHeader label="Chez vous, partout et ailleurs" image={heroImage} />
       <section className={styles.housingGrid}>
         {!housings ? (
           <>{/* TODO: Maybe add a loading spinner here */}</>
         ) : (
-          housings.map(({ cover, title, id }) => (
-            <GridCard key={id} image={cover} label={title} />
+          housings.map((housing) => (
+            <Thumb
+              key={housing.id}
+              image={housing.cover}
+              label={housing.title}
+              link={HousingPage.generatePath(housing)}
+            />
           ))
         )}
       </section>

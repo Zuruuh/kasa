@@ -1,0 +1,36 @@
+.hero {
+  width: 100%;
+  height: 22rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    mix-blend-mode: darken;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background: #000;
+  }
+}
+
+.heroHeading {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
