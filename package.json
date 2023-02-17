@@ -24,7 +24,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@tjmora/ts-range-types": "^1.1.0",
     "@types/chai": "^4.3.4",
-    "@types/node": "^18.13.0",
+    "@types/node": "^16.18.12",
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
