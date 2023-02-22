@@ -19,7 +19,7 @@
   }
 
   &::after {
-    content: var(--card-title);
+    content: var(--data-title);
     position: absolute;
     color: #fff;
     font-size: 1.8rem;

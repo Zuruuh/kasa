@@ -17,7 +17,7 @@ const Thumb: FC<ThumbProps> = ({ label, image, link }) => {
         className={styles.card}
         style={{
           backgroundImage: `url(${image})`,
-          '--card-title': `"${label.replace('"', '\\"')}"`,
+          '--data-title': `"${label.replace('"', '\\"')}"`,
         }}
       ></div>
     </Link>

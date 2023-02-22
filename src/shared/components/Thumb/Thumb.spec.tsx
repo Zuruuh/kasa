@@ -17,7 +17,7 @@ describe('Thumb', async () => {
     test('The card is displayed correctly', async () => {
       const element = screen.queryByText(
         (_, element) =>
-          (element as HTMLElement).style.getPropertyValue('--card-title') ===
+          (element as HTMLElement).style.getPropertyValue('--data-title') ===
           '"My Label"'
       )!;
 

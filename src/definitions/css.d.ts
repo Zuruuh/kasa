@@ -4,6 +4,6 @@ import type * as CSS from 'csstype';
 // Overidding type definition to allow custom css variables in jsx style={{}}
 declare module 'csstype' {
   interface Properties extends CSS.Properties {
-    '--card-title'?: string;
+    [index: `--${string}`]: string | number;
   }
 }
