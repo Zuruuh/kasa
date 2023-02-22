@@ -5,18 +5,25 @@ import Tag from '~/shared/components/Tag/Tag';
 import type { Page, HasUriGenerator } from '~/shared/types/Page';
 import { Housing } from '~/shared/types/housing/Housing';
 import Error404Page from '~/pages/Errors/404/Error404Page';
+import Carousel from '~/shared/components/Carousel/Carousel';
 
 const HousingPage: FC = () => {
   const housing = useLoaderData() as Housing;
 
   return (
-    <>
-      <></>
+    <section>
       {housing.tags.map((tag) => (
         <Tag label={tag} key={tag} />
       ))}
       <StarsRating count={Number(housing.rating) as StarsRatingRange} />
-    </>
+      <div>
+        <Carousel
+          images={housing.pictures}
+          showIndex={true}
+          scrollOptions={{ enabled: true, timeoutInMs: 5000 }}
+        />
+      </div>
+    </section>
   );
 };
 
