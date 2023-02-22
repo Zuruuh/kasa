@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ReactComponent as Star } from './assets/Star.svg';
 import type { IntRange } from '@tjmora/ts-range-types';
 
-const countRange = Array.from(Array(5).keys()) as IntRange<0, 5>[];
+const countRange = Array.from(Array(6).keys()) as IntRange<0, 5>[];
 
 export type StarsRatingRange = typeof countRange[number];
 
