@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+
+.starEmpty {
+  fill: #e3e3e3;
+}
+
+.starFilled {
+  fill: var(--color-primary);
+}

@@ -1,0 +1,14 @@
+.carousel {
+  overflow: hidden;
+}
+
+.images {
+  display: flex;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  height: 50%;
+  transform: translateX(var(--data-offset));
+}

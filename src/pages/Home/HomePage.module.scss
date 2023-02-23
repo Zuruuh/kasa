@@ -1,0 +1,7 @@
+.housingGrid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  grid-auto-rows: 34rem;
+}
