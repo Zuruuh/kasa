@@ -6,7 +6,7 @@ import type { IntRange } from '@tjmora/ts-range-types';
 
 const countRange = Array.from(Array(6).keys()) as IntRange<0, 5>[];
 
-export type StarsRatingRange = typeof countRange[number];
+export type StarsRatingRange = (typeof countRange)[number];
 
 export interface StarsRatingProps {
   count: StarsRatingRange;

@@ -14,6 +14,7 @@ const Carousel: FC<CarouselProps> = ({
   //   showIndex = true,
   //   scrollOptions = { enabled: true, timeoutInMs: 5000 },
 }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [index, setIndex] = useState<number>(0);
   const framedImages = [
     images.at(index - 1),
