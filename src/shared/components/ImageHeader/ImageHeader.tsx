@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import type { ImageHeaderProps } from './ImageHeader.types';
 
 // TODO: Use the size param
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ImageHeader: FC<ImageHeaderProps> = ({ label, image, size }) => {
   return (
     <section>

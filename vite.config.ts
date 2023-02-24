@@ -17,6 +17,7 @@ export default defineConfig({
       all: true,
       include: [
         'src/**/*.tsx',
+        '!src/**/*.stories.tsx',
         '!src/pages', // Pages should be tested in e2e
         '!!src/pages/**/components/**/*.tsx',
         '!src/**/index.ts', // useless to test re-exporters
