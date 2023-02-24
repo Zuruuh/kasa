@@ -13,7 +13,7 @@ const HomePage: FC = () => {
 
   return (
     <>
-      <ImageHeader label="Chez vous, partout et ailleurs" image={heroImage} />
+      <ImageHeader label="Chez vous, et partout ailleurs" image={heroImage} />
       <section className={styles.housingGrid}>
         {!housings ? (
           <>{/* TODO: Maybe add a loading spinner here */}</>

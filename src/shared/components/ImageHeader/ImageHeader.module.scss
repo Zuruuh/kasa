@@ -27,10 +27,24 @@
   color: #fff;
   text-align: center;
   position: absolute;
+  padding: 2rem 0;
 }
 
 .heroImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 50rem) {
+  .hero {
+    height: 11rem;
+    justify-content: flex-start;
+  }
+
+  .heroHeading {
+    width: 75%;
+    padding: 0rem 0.5rem;
+    text-align: left;
+  }
 }

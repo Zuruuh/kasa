@@ -26,3 +26,13 @@
 .linkActive {
   text-decoration: underline;
 }
+
+@media (max-width: 50rem) {
+  .link {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    height: 4.7rem;
+  }
+}

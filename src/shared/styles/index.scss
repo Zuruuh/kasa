@@ -15,3 +15,9 @@
 html {
   font-size: 62.5%;
 }
+
+@media (max-width: 50rem) {
+  :root {
+    --content-padding: 1rem;
+  }
+}

@@ -29,3 +29,9 @@
     min-height: 4.4rem;
   }
 }
+
+@media (max-width: 50rem) {
+  .card {
+    height: 25rem;
+  }
+}

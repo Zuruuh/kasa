@@ -31,7 +31,7 @@ const Navbar: FC = () => {
   return (
     <nav className={styles.nav}>
       <Link to={HomePage.path}>
-        <img alt="Kasa" src="/assets/logo.svg" />
+        <img alt="Kasa" src="/assets/logo.svg" className={styles.logo} />
       </Link>
       <ul className={styles.links}>{links}</ul>
     </nav>

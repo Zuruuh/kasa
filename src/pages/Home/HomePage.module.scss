@@ -1,7 +1,16 @@
 .housingGrid {
-  margin-top: 1rem;
+  margin-top: 4.4rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   grid-auto-rows: 34rem;
+}
+
+@media (max-width: 50rem) {
+  .housingGrid {
+    grid-auto-rows: 25rem;
+    margin-top: 2rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
