@@ -1,8 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
-import type { Meta } from '@storybook/react';
+import type { Decorator } from './Decorator';
 
-type DecoratorFn = Meta['decorators'];
-
-export const withRouter: DecoratorFn = (
-  component: Parameters<DecoratorFn>[0]
-): ReturnType<DecoratorFn> => <BrowserRouter>{component()}</BrowserRouter>;
+export const withRouter: Decorator = (component) => (
+  <BrowserRouter>{component()}</BrowserRouter>
+);
