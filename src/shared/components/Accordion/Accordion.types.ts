@@ -10,8 +10,13 @@ export { ACCORDION_STATES };
 export type AccordionState =
   (typeof ACCORDION_STATES)[keyof typeof ACCORDION_STATES];
 
-export interface AccordionProps {
+type BaseAccordionProps = {
   label: string;
-  content: string;
   defaultState?: AccordionState;
-}
+  content?: string;
+  children?: React.ReactNode;
+};
+
+export type AccordionProps =
+  | (BaseAccordionProps & { content: string })
+  | (BaseAccordionProps & { children: React.ReactNode });

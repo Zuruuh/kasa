@@ -29,3 +29,18 @@ export const Open: Story = {
     label: 'My Accordion',
   },
 };
+
+export const WithReactChildren: Story = {
+  args: {
+    defaultState: ACCORDION_STATES.OPENED,
+    children: (
+      <ul>
+        <li>Line 1</li>
+        <li>Line 2</li>
+        <li>Line 3</li>
+        <li>Line 4</li>
+      </ul>
+    ),
+    label: 'My Accordion',
+  },
+};

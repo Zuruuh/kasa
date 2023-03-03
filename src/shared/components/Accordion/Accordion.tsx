@@ -1,7 +1,7 @@
 import { type FC, useId, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ReactComponent as ChevronDown } from '~/icons/chevron-down-solid.svg';
-import { ReactComponent as ChevronUp } from '~/icons/chevron-up-solid.svg';
+import { ReactComponent as ChevronDown } from './assets/chevron-down-solid.svg';
+import { ReactComponent as ChevronUp } from './assets/chevron-up-solid.svg';
 import {
   ACCORDION_STATES,
   type AccordionState,
@@ -9,11 +9,9 @@ import {
 } from './Accordion.types';
 import styles from './Accordion.module.scss';
 
-const Accordion: FC<AccordionProps> = ({
-  label,
-  defaultState = ACCORDION_STATES.CLOSED,
-  content,
-}) => {
+const Accordion: FC<AccordionProps> = (props) => {
+  const { label, defaultState = ACCORDION_STATES.CLOSED } = props;
+
   const [opened, setOpened] = useState<boolean>(
     defaultState === ACCORDION_STATES.OPENED
   );
@@ -41,7 +39,11 @@ const Accordion: FC<AccordionProps> = ({
       </div>
       {opened ? (
         <div className={styles.contentContainer}>
-          <span className={styles.content}>{content}</span>
+          {props.content !== undefined ? (
+            <span className={styles.content}>{props.content}</span>
+          ) : (
+            <div className={styles.content}>{props.children}</div>
+          )}
         </div>
       ) : (
         <></>
@@ -52,7 +54,8 @@ const Accordion: FC<AccordionProps> = ({
 
 Accordion.propTypes = {
   label: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  children: PropTypes.node,
   defaultState: PropTypes.oneOf(
     Object.values(ACCORDION_STATES) as AccordionState[]
   ),
