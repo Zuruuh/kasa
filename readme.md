@@ -21,6 +21,13 @@ Start the dev server using the `dev` script
 pnpm run dev
 ```
 
+This project also uses [storybook](storybook.js.org/) to isolate components & display them.  
+Start your local storybook environment with the `storybook` script
+
+```bash
+pnpm run storybook
+```
+
 ## Testing
 
 Run unit/functionnal tests with the `test` script
