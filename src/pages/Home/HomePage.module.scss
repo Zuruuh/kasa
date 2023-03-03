@@ -6,7 +6,7 @@
   grid-auto-rows: 34rem;
 }
 
-@media (max-width: 50rem) {
+@phone {
   .housingGrid {
     grid-auto-rows: 25rem;
     margin-top: 2rem;

@@ -36,7 +36,7 @@
   object-fit: cover;
 }
 
-@media (max-width: 50rem) {
+@phone {
   .hero {
     height: 11rem;
     justify-content: flex-start;
