@@ -1,20 +1,31 @@
 .accordion {
   width: 100%;
-  height: auto;
+  min-height: var(--top-bar-height);
+  position: relative;
+  --top-bar-height: 4.5rem;
 }
 
 .topBar {
   background-color: var(--color-primary);
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 1rem;
   padding: 0.5rem 2rem;
   width: 100%;
   display: flex;
-  height: 4.5rem;
+  height: var(--top-bar-height);
   justify-content: space-between;
+  align-items: center;
+  position: absolute;
 }
 
 .label {
   color: #fff;
+}
+
+.labelSmall {
+  font-size: 1.8rem;
+}
+
+.labelLarge {
   font-size: 2.4rem;
 }
 
@@ -29,8 +40,18 @@
   font-size: 2.4rem;
 }
 
+.textSmall {
+  font-size: 1.8rem;
+}
+
+.textLarge {
+  font-size: 2.4rem;
+}
+
 .contentContainer {
   background-color: #f6f6f6;
   color: var(--color-primary);
   padding: 1rem;
+  padding-top: calc(0.5rem + var(--top-bar-height));
+  border-radius: 1rem;
 }

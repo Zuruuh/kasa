@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import Accordion from './Accordion';
-import { ACCORDION_STATES } from './Accordion.types';
+import { ACCORDION_SIZES, ACCORDION_STATES } from './Accordion.types';
+import { withPadding } from '~/shared/storybook/decorators';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Component/Accordion',
@@ -9,6 +9,7 @@ const meta: Meta<typeof Accordion> = {
   parameters: {
     layout: 'fullscreen',
   },
+  decorators: [withPadding],
 };
 
 export default meta;
@@ -34,7 +35,7 @@ export const WithReactChildren: Story = {
   args: {
     defaultState: ACCORDION_STATES.OPENED,
     children: (
-      <ul>
+      <ul style={{ listStyleType: 'none' }}>
         <li>Line 1</li>
         <li>Line 2</li>
         <li>Line 3</li>
@@ -42,5 +43,14 @@ export const WithReactChildren: Story = {
       </ul>
     ),
     label: 'My Accordion',
+  },
+};
+
+export const Small: Story = {
+  args: {
+    label: 'My Accordion',
+    content: 'My Content',
+    defaultState: ACCORDION_STATES.OPENED,
+    size: ACCORDION_SIZES.SMALL,
   },
 };

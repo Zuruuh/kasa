@@ -1,16 +1,36 @@
-import { type FC, useId, useState } from 'react';
+import { type FC, useId, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ReactComponent as ChevronDown } from './assets/chevron-down-solid.svg';
 import { ReactComponent as ChevronUp } from './assets/chevron-up-solid.svg';
 import {
   ACCORDION_STATES,
+  ACCORDION_SIZES,
   type AccordionState,
   type AccordionProps,
+  type SizeClassNameWrapper,
 } from './Accordion.types';
 import styles from './Accordion.module.scss';
 
 const Accordion: FC<AccordionProps> = (props) => {
-  const { label, defaultState = ACCORDION_STATES.CLOSED } = props;
+  const {
+    label,
+    defaultState = ACCORDION_STATES.CLOSED,
+    size = ACCORDION_SIZES.LARGE,
+  } = props;
+
+  const sizeClassNames =
+    useMemo<SizeClassNameWrapper>((): SizeClassNameWrapper => {
+      return {
+        [ACCORDION_SIZES.SMALL]: {
+          text: styles.textSmall,
+          label: styles.labelSmall,
+        },
+        [ACCORDION_SIZES.LARGE]: {
+          text: styles.textLarge,
+          label: styles.labelLarge,
+        },
+      }[size];
+    }, [size]);
 
   const [opened, setOpened] = useState<boolean>(
     defaultState === ACCORDION_STATES.OPENED
@@ -22,7 +42,10 @@ const Accordion: FC<AccordionProps> = (props) => {
   return (
     <div className={styles.accordion}>
       <div className={styles.topBar}>
-        <span className={styles.label} id={buttonHintId}>
+        <span
+          className={`${styles.label} ${sizeClassNames.label}`}
+          id={buttonHintId}
+        >
           {label}
         </span>
         <button
@@ -39,10 +62,14 @@ const Accordion: FC<AccordionProps> = (props) => {
       </div>
       {opened ? (
         <div className={styles.contentContainer}>
-          {props.content !== undefined ? (
-            <span className={styles.content}>{props.content}</span>
+          {'children' in props ? (
+            <div className={`${styles.content} ${sizeClassNames.text}`}>
+              {props.children}
+            </div>
           ) : (
-            <div className={styles.content}>{props.children}</div>
+            <span className={`${styles.content} ${sizeClassNames.text}`}>
+              {props.content}
+            </span>
           )}
         </div>
       ) : (
@@ -54,8 +81,7 @@ const Accordion: FC<AccordionProps> = (props) => {
 
 Accordion.propTypes = {
   label: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  children: PropTypes.node,
+  size: PropTypes.oneOf(Object.values(ACCORDION_SIZES)),
   defaultState: PropTypes.oneOf(
     Object.values(ACCORDION_STATES) as AccordionState[]
   ),
