@@ -33,6 +33,7 @@ const HomePage: FC = () => {
 };
 
 const page: Page = {
+  index: true,
   element: <HomePage />,
   path: '/',
 };
