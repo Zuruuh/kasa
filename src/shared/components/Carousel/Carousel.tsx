@@ -1,12 +1,12 @@
-import { useState, type FC, useMemo, useCallback } from 'react';
+import { useState, type FC, useMemo } from 'react';
 import type { AutoScrollableOptions } from '~/shared/types/AutoScrollableOptions';
 import type { URL } from '~/shared/types/URL';
-import styles from './Carousel.module.scss';
 import IconButton from '../IconButton/IconButton';
 import { ReactComponent as LeftArrowIcon } from './assets/left-arrow.svg';
 import { ReactComponent as RightArrowIcon } from './assets/right-arrow.svg';
 import PropTypes, { type Validator } from 'prop-types';
 import { useTimeout } from '~/shared/hooks/useTimeout';
+import styles from './Carousel.module.scss';
 
 export type CarouselProps = {
   images: URL[];
@@ -29,15 +29,20 @@ const Carousel: FC<CarouselProps> = ({
     [images, index]
   );
 
-  const next = useCallback(() => {
+  function next() {
     setIndex((i) => (i + 1 > images.length - 1 ? 0 : i + 1));
-  }, [images]);
+    resetTimeout();
+  }
 
-  const previous = useCallback(() => {
+  function previous(): void {
     setIndex((i) => (i - 1 < 0 ? images.length - 1 : i - 1));
-  }, [images]);
+    resetTimeout();
+  }
 
-  useTimeout(next, scrollOptions.enabled ? scrollOptions.timeoutInMs : false);
+  const { reset: resetTimeout } = useTimeout(
+    next,
+    scrollOptions.enabled ? scrollOptions.timeoutInMs : false
+  );
 
   return (
     <div className={styles.carousel}>
