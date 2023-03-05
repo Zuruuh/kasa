@@ -1,9 +1,17 @@
-.accordionContainer {
-  margin: 0.5rem;
-  width: 100%;
-  height: auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page {
-  height: 100%;
+  height: auto;
+  width: 80%;
+}
+
+.accordionContainer {
+  margin: 0.5rem;
+  margin-top: 3.3rem;
+  width: 100%;
+  height: auto;
 }
