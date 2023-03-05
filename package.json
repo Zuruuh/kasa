@@ -33,7 +33,7 @@
     "@tjmora/ts-range-types": "^1.1.0",
     "@total-typescript/ts-reset": "^0.3.7",
     "@types/chai": "^4.3.4",
-    "@types/node": "^16.18.12",
+    "@types/node": "^18.14.6",
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
