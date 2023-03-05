@@ -1,10 +1,18 @@
 .tag {
   background-color: var(--color-primary);
-  padding: 0.5rem;
-  border-radius: 1rem;
+  padding: 0.2rem 2rem;
+  border-radius: 1.25rem;
   width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .label {
   color: #fff;
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  word-wrap: unset;
 }
