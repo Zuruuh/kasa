@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Tag from './Tag';
+import { withCentered, withPadding } from '~/shared/storybook/decorators';
 
 const meta: Meta<typeof Tag> = {
   title: 'Component/Tag',
@@ -7,6 +8,7 @@ const meta: Meta<typeof Tag> = {
   parameters: {
     layout: 'fullscreen',
   },
+  decorators: [withPadding, withCentered],
 };
 
 export default meta;

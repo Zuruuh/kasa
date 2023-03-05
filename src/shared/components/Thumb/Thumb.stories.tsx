@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Thumb from './Thumb';
-import { withRouter } from '~/shared/storybook/helpers/withRouter';
+import { withRouter } from '~/shared/storybook/decorators';
 
 const meta: Meta<typeof Thumb> = {
   title: 'Component/Thumb',
