@@ -38,7 +38,7 @@ IconButton.propTypes = {
   icon: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
-  size: PropTypes.oneOf(Object.values(ICON_BUTTON_SIZE) as IconButtonSize[]),
+  size: PropTypes.oneOf(Object.values(ICON_BUTTON_SIZE)),
 };
 
 export default IconButton;
