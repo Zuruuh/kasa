@@ -13,6 +13,6 @@ export interface Housing {
   host: Host;
   rating: StringIntRange<0, 5>;
   location: string;
-  equipements: Equipment[];
+  equipments: Equipment[];
   tags: Tag[];
 }
