@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Node ^16 (use nvm if possible)
+- Node ^16 (use [fnm](https://github.com/Schniz/fnm) if possible)
 - pnpm ^7 (install with `npm i -g pnpm`)
 
 ## Installation
