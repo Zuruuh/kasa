@@ -1,12 +1,13 @@
-import { MutableRefObject, useEffect, useRef } from 'react';
+import { type MutableRefObject, useCallback, useEffect, useRef } from 'react';
 
 export interface UseTimeoutData {
   timeoutRef: MutableRefObject<NodeJS.Timeout | undefined>;
   reset(): void;
+  clear(): void;
 }
 
 export function useTimeout(
-  callback: () => unknown,
+  callback: () => void,
   timeoutInMs: false | number
 ): UseTimeoutData {
   const timeoutRef = useRef<NodeJS.Timeout>();
@@ -28,13 +29,20 @@ export function useTimeout(
     return () => clearTimeout(timeoutRef.current!);
   }, [timeoutInMs]);
 
+  const clear = useCallback(() => {
+    clearTimeout(timeoutRef.current);
+  }, []);
+
+  const reset = useCallback(() => {
+    clear();
+    if (timeoutInMs !== false) {
+      timeoutRef.current = setTimeout(callbackRef.current, timeoutInMs);
+    }
+  }, [clear, timeoutInMs]);
+
   return {
     timeoutRef,
-    reset() {
-      clearTimeout(timeoutRef.current);
-      if (timeoutInMs !== false) {
-        timeoutRef.current = setTimeout(callbackRef.current, timeoutInMs);
-      }
-    },
+    clear,
+    reset,
   };
 }
