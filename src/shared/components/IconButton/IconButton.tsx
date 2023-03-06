@@ -1,17 +1,14 @@
 import { useMemo, type FC } from 'react';
 import styles from './IconButton.module.scss';
 import PropTypes from 'prop-types';
-import {
-  ICON_BUTTON_SIZE,
-  type IconButtonSize,
-  type IconButtonProps,
-} from './IconButton.types';
+import { ICON_BUTTON_SIZE, type IconButtonProps } from './IconButton.types';
 
 const IconButton: FC<IconButtonProps> = ({
   icon,
   disabled = false,
   onClick,
   size = ICON_BUTTON_SIZE.LARGE,
+  alt,
 }) => {
   const buttonSizeClassName = useMemo<string>((): string => {
     return {
@@ -28,6 +25,7 @@ const IconButton: FC<IconButtonProps> = ({
       }`}
       disabled={disabled}
       onClick={onClick}
+      aria-label={alt}
     >
       {icon}
     </button>
@@ -39,6 +37,7 @@ IconButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(ICON_BUTTON_SIZE)),
+  alt: PropTypes.string.isRequired,
 };
 
 export default IconButton;

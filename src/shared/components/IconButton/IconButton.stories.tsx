@@ -32,6 +32,7 @@ export const Medium: Story = {
     onClick,
     disabled: true,
     size: ICON_BUTTON_SIZE.MEDIUM,
+    alt: 'Left arrow',
   },
 };
 
@@ -41,6 +42,7 @@ export const Small: Story = {
     onClick,
     disabled: true,
     size: ICON_BUTTON_SIZE.SMALL,
+    alt: 'Left arrow',
   },
 };
 
@@ -49,5 +51,6 @@ export const Disabled: Story = {
     icon: <LeftArrowIcon />,
     onClick,
     disabled: true,
+    alt: 'Left arrow',
   },
 };

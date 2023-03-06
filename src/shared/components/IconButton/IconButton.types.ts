@@ -18,4 +18,5 @@ export interface IconButtonProps {
   disabled?: boolean;
   onClick: MouseEventHandler;
   size?: IconButtonSize;
+  alt: string;
 }
