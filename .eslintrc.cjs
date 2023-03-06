@@ -25,6 +25,7 @@ module.exports = {
     'react/react-in-jsx-scope': ['off'],
     'react/no-unescaped-entities': ['off'],
     '@typescript-eslint/no-non-null-assertion': ['off'],
+    'jsx-a11y/no-noninteractive-tabindex': ['off'],
   },
   settings: {
     react: {
