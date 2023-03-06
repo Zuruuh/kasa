@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import HomePage from '~/pages/Home/HomePage';
 import AboutPage from '~/pages/About/AboutPage';
 import styles from './NavBar.module.scss';
+import { ReactComponent as Logo } from '~/shared/assets/logo.svg';
 
 interface NavLinkData {
   label: string;
@@ -31,7 +32,7 @@ const Navbar: FC = () => {
   return (
     <nav className={styles.nav}>
       <Link to={HomePage.path}>
-        <img alt="Kasa" src="/assets/logo.svg" className={styles.logo} />
+        <Logo role="img" aria-label="Kasa" className={styles.logo} />
       </Link>
       <ul className={styles.links}>{links}</ul>
     </nav>

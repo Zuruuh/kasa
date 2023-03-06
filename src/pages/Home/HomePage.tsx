@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import Thumb from '~/shared/components/Thumb/Thumb';
 import { useFetch } from '~/shared/hooks/useFetch';
 import styles from './HomePage.module.scss';
-import heroImage from '/assets/home/hero.jpeg';
+import heroImage from './assets/hero.jpeg';
 import HousingPage from '~/pages/Housing';
 import type { Housing } from '~/shared/types/housing/Housing';
 import type { Page } from '~/shared/types/Page';
