@@ -12,8 +12,7 @@ import image from './assets/kalen-emsley-Bkci_8qcdvQ-unsplash 3.png';
 const ACCORDION_DATA: (AccordionProps & { content: string })[] = [
   {
     label: 'Fiabilité',
-    content:
-      'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.',
+    content: 'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.',
   },
   {
     label: 'Respect',
