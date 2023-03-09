@@ -75,6 +75,12 @@ pnpm run lint:typescript
 The linting commands listed above will be ran in CI (github actions) whenever you push to a branch or create a pull request.  
 All of them must pass in order to be merged on `dev` branch.
 
+## CD
+
+The project is currently hosted on vercel, which provides webhooks & integrations with github.  
+In short, this means whenever the `main` branch is updated, a re-deploy will be triggered and the website at `https://kasa.zuruuh.vercel.app` will be updated.  
+Also, when creating a pull request, a preview url will be generated, with the modifications of the branch.
+
 ## Routing
 
 This project uses [React Router ^6](https://reactrouter.com/en/main) to handle in-browser routing.  
