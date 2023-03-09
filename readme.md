@@ -74,3 +74,11 @@ pnpm run lint:typescript
 
 The linting commands listed above will be ran in CI (github actions) whenever you push to a branch or create a pull request.  
 All of them must pass in order to be merged on `dev` branch.
+
+## Routing
+
+This project uses [React Router ^6](https://reactrouter.com/en/main) to handle in-browser routing.  
+Unlike what's commonly seen in projects using with this library, the routing is not handled in a **huge** `Router.tsx` file.  
+The routing configuration for each page is managed directly in the page file, where it is exported.  
+This allows to work more easily and split code more efficiently.
+If you are looking for the url of a page, you won't have to look through tons of nested url matchers/loaders/actions/etc...
