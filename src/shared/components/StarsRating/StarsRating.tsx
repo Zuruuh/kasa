@@ -14,7 +14,7 @@ export interface StarsRatingProps {
 
 const StarsRating: FC<StarsRatingProps> = ({ count }) => {
   return (
-    <div aria-label={`Note: ${count}/5`}>
+    <div aria-label={`Note: ${count}/5`} className={styles.container}>
       {Array.from({ length: 5 }).map((_, i) =>
         i >= count ? (
           <Star

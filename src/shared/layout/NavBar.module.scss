@@ -18,7 +18,7 @@
 .link {
   text-decoration: none;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   color: var(--color-primary);
   padding: 1rem;
 }
@@ -27,12 +27,6 @@
   text-decoration: underline;
 }
 
-@phone {
-  .link {
-    font-size: 1.2rem;
-  }
-
-  .logo {
-    height: 4.7rem;
-  }
+.logo {
+  width: min(40vw, 21.1rem);
 }

@@ -96,6 +96,7 @@ const Carousel: FC<CarouselProps> = ({
                 onClick={previous}
                 icon={<LeftArrowIcon />}
                 alt="Swipe to previous image"
+                disabled={images.length === 1}
               />
             </div>
             <div className={`${styles.rightButton} ${styles.controlsButton}`}>
@@ -103,6 +104,7 @@ const Carousel: FC<CarouselProps> = ({
                 onClick={next}
                 alt="Swipe to next image"
                 icon={<RightArrowIcon />}
+                disabled={images.length === 1}
               />
             </div>
             {showIndex ? (

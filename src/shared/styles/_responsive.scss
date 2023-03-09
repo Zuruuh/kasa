@@ -1,5 +1,2 @@
-@mixin phone {
-  @media only screen and (max-width: 50rem) {
-    @content;
-  }
-}
+$phone: 50rem;
+$tablet: 70rem;

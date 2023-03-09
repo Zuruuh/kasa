@@ -1,3 +1,5 @@
+@import '../../shared/styles/responsive';
+
 .container {
   display: flex;
   flex-direction: column;
@@ -14,4 +16,10 @@
   margin-top: 3.3rem;
   width: 100%;
   height: auto;
+}
+
+@media only screen and (max-width: $phone) {
+  .page {
+    width: 100%;
+  }
 }

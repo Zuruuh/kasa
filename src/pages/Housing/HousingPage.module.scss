@@ -1,7 +1,14 @@
+@import '../../shared/styles/responsive';
+
 .header {
   margin-top: 3rem;
   display: flex;
   justify-content: space-between;
+}
+
+.headerFirstRow {
+  display: flex;
+  flex-direction: column;
 }
 
 .titleBlock {
@@ -19,6 +26,19 @@
   color: var(--color-primary);
   font-size: 1.8rem;
   font-weight: 500;
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 0;
+  min-height: 1rem;
+}
+
+.headerSecondRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .host {
@@ -42,15 +62,9 @@
   object-fit: cover;
 }
 
-.subtitle {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem 0;
-}
-
-.tags {
-  display: flex;
-  gap: 0.5rem;
+.rating {
+  margin-top: 1rem;
+  width: fit-content;
 }
 
 .informations {
@@ -60,4 +74,26 @@
 
 .equipment {
   list-style-type: none;
+}
+
+@media only screen and (max-width: $tablet) {
+  .header {
+    flex-direction: column;
+  }
+
+  .headerSecondRow {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    padding-bottom: 0;
+  }
+
+  .informations {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 }

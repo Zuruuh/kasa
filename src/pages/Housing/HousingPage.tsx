@@ -25,29 +25,31 @@ const HousingPage: FC = () => {
         />
       </div>
       <header className={styles.header}>
-        <div className={styles.titleBlock}>
-          <h3 className={styles.title}>{housing.title}</h3>
-          <span className={styles.location}>{housing.location}</span>
+        <div className={styles.headerFirstRow}>
+          <div className={styles.titleBlock}>
+            <h3 className={styles.title}>{housing.title}</h3>
+            <span className={styles.location}>{housing.location}</span>
+          </div>
+          <div className={styles.tags}>
+            {housing.tags.map((tag) => (
+              <Tag label={tag} key={tag} />
+            ))}
+          </div>
         </div>
-        <div className={styles.host}>
-          <span className={styles.hostName}>{housing.host.name}</span>
-          <img
-            className={styles.hostPicture}
-            src={housing.host.picture}
-            alt={housing.host.name}
-          />
+        <div className={styles.headerSecondRow}>
+          <div className={styles.host}>
+            <span className={styles.hostName}>{housing.host.name}</span>
+            <img
+              className={styles.hostPicture}
+              src={housing.host.picture}
+              alt={housing.host.name}
+            />
+          </div>
+          <div className={styles.rating}>
+            <StarsRating count={Number(housing.rating) as StarsRatingRange} />
+          </div>
         </div>
       </header>
-      <div className={styles.subtitle}>
-        <div className={styles.tags}>
-          {housing.tags.map((tag) => (
-            <Tag label={tag} key={tag} />
-          ))}
-        </div>
-        <div className={styles.rating}>
-          <StarsRating count={Number(housing.rating) as StarsRatingRange} />
-        </div>
-      </div>
       <section className={styles.informations}>
         <Accordion
           label="Description"

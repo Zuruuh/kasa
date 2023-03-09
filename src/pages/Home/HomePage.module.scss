@@ -1,16 +1,16 @@
+@import '../../shared/styles/responsive';
+
 .housingGrid {
+  --thumb-size: 34rem;
   margin-top: 4.4rem;
+  padding: 0 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-size), 1fr));
   gap: 6rem;
-  grid-auto-rows: 34rem;
 }
 
-@phone {
+@media only screen and (max-width: $phone) {
   .housingGrid {
-    grid-auto-rows: 25rem;
-    margin-top: 2rem;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    --thumb-size: 24rem;
   }
 }
