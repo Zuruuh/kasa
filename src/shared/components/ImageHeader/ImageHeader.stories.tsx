@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ImageHeader from './ImageHeader';
+import { withPadding } from '~/shared/storybook/decorators';
 
 const meta: Meta<typeof ImageHeader> = {
   title: 'Component/ImageHeader',
   component: ImageHeader,
+  decorators: [withPadding],
   parameters: {
     layout: 'fullscreen',
   },
