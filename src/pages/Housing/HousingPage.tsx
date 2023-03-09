@@ -5,7 +5,7 @@ import Tag from '~/shared/components/Tag';
 import type { Page, HasUriGenerator } from '~/shared/types/Page';
 import { Housing } from '~/shared/types/housing/Housing';
 import Error404Page from '~/pages/Errors/404/Error404Page';
-import Carousel from '~/shared/components/Carousel/Carousel';
+import Carousel from '~/shared/components/Carousel';
 import Accordion, {
   ACCORDION_SIZES,
   ACCORDION_STATES,

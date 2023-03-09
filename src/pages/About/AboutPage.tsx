@@ -1,18 +1,18 @@
 import { type FC } from 'react';
-import Accordion from '~/shared/components/Accordion/Accordion';
-import {
+import Accordion, {
   ACCORDION_SIZES,
   type AccordionProps,
-} from '~/shared/components/Accordion/Accordion.types';
+} from '~/shared/components/Accordion';
 import styles from './AboutPage.module.scss';
 import { Page } from '~/shared/types/Page';
-import ImageHeader from '~/shared/components/ImageHeader/ImageHeader';
+import ImageHeader from '~/shared/components/ImageHeader';
 import image from './assets/kalen-emsley-Bkci_8qcdvQ-unsplash 3.png';
 
 const ACCORDION_DATA: (AccordionProps & { content: string })[] = [
   {
     label: 'Fiabilité',
-    content: 'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.',
+    content:
+      'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.',
   },
   {
     label: 'Respect',
