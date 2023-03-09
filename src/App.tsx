@@ -12,6 +12,12 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [HomePage, AboutPage, Housing, Error404Page] as Page[],
+    // children: Object.values(
+    //   import.meta.glob('./pages/**/*.tsx', { eager: true }) as Record<
+    //     string,
+    //     Page
+    //   >
+    // ),
   },
 ]);
 
